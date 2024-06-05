@@ -14,13 +14,14 @@ services:
       - DB_POSTGRESDB_PASSWORD=n8n_password
       - NODE_FUNCTION_ALLOW_EXTERNAL=pg
       - PORT=5555
+      - N8N_ENCRYPTION_KEY=${ENCRYPTION_KEY}  # Adicione esta linha
     ports:
       - "5555:5555"
     depends_on:
       - postgres
 
   postgres:
-    image: postgres:12
+    image: ghcr.io/railwayapp-templates/postgres-ssl:latest
     environment:
       - POSTGRES_DB=n8n
       - POSTGRES_USER=n8n
