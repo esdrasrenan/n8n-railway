@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   n8n:
-    build: .
+    image: n8nio/n8n:latest
     environment:
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=admin
@@ -12,8 +12,8 @@ services:
       - DB_POSTGRESDB_DATABASE=${DB_POSTGRESDB_DATABASE}
       - DB_POSTGRESDB_USER=${DB_POSTGRESDB_USER}
       - DB_POSTGRESDB_PASSWORD=${DB_POSTGRESDB_PASSWORD}
+      - DB_POSTGRESDB_PORT=${DB_POSTGRESDB_PORT}
       - NODE_FUNCTION_ALLOW_EXTERNAL=pg
-      - PORT=5555
       - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
     ports:
       - "5678:5678"
