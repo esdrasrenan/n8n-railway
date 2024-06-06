@@ -1,8 +1,5 @@
 FROM n8nio/n8n:latest
 
-# Instalar psql
-RUN apt-get update && apt-get install -y postgresql-client
-
 ARG PGPASSWORD
 ARG PGHOST
 ARG PGPORT
