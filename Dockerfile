@@ -1,5 +1,8 @@
 FROM n8nio/n8n:latest
 
+# Instalar psql
+RUN apt-get update && apt-get install -y postgresql-client
+
 ARG PGPASSWORD
 ARG PGHOST
 ARG PGPORT
@@ -20,4 +23,4 @@ ENV N8N_ENCRYPTION_KEY=$ENCRYPTION_KEY
 # Expose the port
 EXPOSE 5678
 
-CMD ["start"]
+CMD ["n8n", "start"]
