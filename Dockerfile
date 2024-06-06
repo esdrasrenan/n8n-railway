@@ -17,4 +17,7 @@ ARG ENCRYPTION_KEY
 
 ENV N8N_ENCRYPTION_KEY=$ENCRYPTION_KEY
 
-“CMD [“start”]”
+# Expose the port
+EXPOSE 5678
+
+CMD ["n8n", "start"]
