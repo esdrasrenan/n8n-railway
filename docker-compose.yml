@@ -16,7 +16,7 @@ services:
       - PORT=5555
       - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY}
     ports:
-      - "5555:5555"
+      - "5678:5678"
     depends_on:
       - postgres
 
