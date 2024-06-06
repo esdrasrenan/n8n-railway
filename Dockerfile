@@ -23,4 +23,4 @@ ENV N8N_ENCRYPTION_KEY=$ENCRYPTION_KEY
 # Expose the port
 EXPOSE 5678
 
-CMD ["n8n", "start"]
+CMD ["start"]
